@@ -1,0 +1,4 @@
+build with :
+dpkg-buildpackage -uc -us
+
+for skipping signing package.
