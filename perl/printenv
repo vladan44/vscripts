@@ -1,0 +1,8 @@
+#!/usr/bin/perl 
+
+$userName =  $ENV{'LOGNAME'}; 
+print "Environment for $userName\n"; 
+
+my @paths = split ':', $ENV{PATH};
+foreach (@paths) { print $_, "\n" ; }
+

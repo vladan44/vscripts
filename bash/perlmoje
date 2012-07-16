@@ -1,0 +1,18 @@
+#!/usr/bin/perl
+
+@myfiles = ( 
+            "nfilemanagerimpl.cpp", 
+            "nfilemanagerimpl.hx", 
+            "nosfilemanagerimpl.cpp", 
+            "nosfilemanagerimpl.hx", 
+            "nosfilemanager.hi", 
+            "nosfileimpl.cpp", 
+            "nosfileimpl.hx", 
+            "nosdirectoryimpl.cpp", 
+            "nosdirectoryimpl.hx", 
+            "ngi3filemanager.h", 
+            "ngi3file.h", 
+            "ngi3directory.h", 
+            );
+
+while( <> ) { foreach $file (@myfiles) { print $_ if $_ =~ $file; } }

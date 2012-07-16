@@ -1,0 +1,48 @@
+Simple Bash Backup Script
+
+
+COPYRIGHT:
+  (c) 2001 Chris Arrowood (GNU LGPL V2.1)
+  You may view the full copyright text at:
+  http://www.opensource.org/licenses/lgpl-license.html
+
+
+
+REQUIREMENTS:
+This was created on a RedHat7 Linux box but should work with any Linux or other *nix that has the following installed:
+- Bash shell
+- basic file-handling commands, i.e. mv, rm, cp, cat
+- tar
+- gzip
+- mail
+- A hard drive other than the one you are backing up from. (See notes, below.)
+
+
+
+INSTALLATION:
+Installation should be relatively painless. Once you untar the distribution file for this script, move it to the directory that you want it to stay in.  On my system I choose /root/scripts so that I have /root/scripts/simplebashbu/simplebashbu.sh. 
+
+Make sure that the script has the execute permission set by doing a chmod 700 (or similar) on it.
+
+Next, open simplebashbu in your favorite text editor (shameless plug for VIM here ;-).  Make sure that the very first line points to whever your bash shell is installed.  On my system (and most others) it would be:
+#!/bin/bash
+
+All of the configuration for this script that you need to change is located in the section marked "User Variables".  Do not edit anything below this unless you know what you are doing.  Each user variable is marked with a comment explaining how what it does.  Go through this list and edit each one accordingly.
+
+If you want the script to run automatically (as it ws designed to do) then you need to add a cron job event to start it (crontab -e).  I recommend running it every night since that is how it was desinged to run.  On my system, I added the following cron entry:
+1 5 * * * /root/scripts/simplebashbu/simplebashbu.sh
+
+This tells cron to run the script at 5:01 am everyday. 
+
+Finally, make sure that the user that this job will be ran as can run the commands listed in the requirements section above.  The script calls these commands assuming they are already in the path of the user running the script.
+
+Thats all there is to it!  Enjoy!
+
+
+
+NOTES:
+ALWAYS SET THE BACKUP_DIR VARIABLE TO A DIRECTORY ON A SEPERATE HARD DRIVE THAN THE ONE THAT YOU ARE BACKING UP! It does not make sense to make a back up of some filesystem and then have the ouptput of that backup saved on the same harddrive.  If that hard drive fails you lose the original and your backup both!  You have been warned...
+
+ALWAYS TEST YOUR BACKUPS PERIODICALLY.  No matter what backup script, program or method you use, always verify the integrity of tha backups when you first implement it, and periodically there after.  What good is a backup if you cant restore from it because it is corrupted or something?
+
+

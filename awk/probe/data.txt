@@ -1,0 +1,47 @@
+       +--------------------------------------------+
+       |		AWK Table 1		                    |
+       |	     Binary Operators		            |
+       |Operator	Type	     Meaning	        |
+       +--------------------------------------------+
+       |+		Arithmetic   Addition	            |
+       |-		Arithmetic   Subtraction            |
+       |*		Arithmetic   Multiplication         |
+       |/		Arithmetic   Division	            |
+       |%		Arithmetic   Modulo	                |
+       |<space>		String	 Concatenation          |
+       +--------------------------------------------+
+
+     +-----------------------------------------+
+	 |		AWK Table 2	                	   |
+	 |	    Assignment Operators	           |
+	 |Operator   Meaning			           |
+	 |+=	     Add result to variable	       |
+	 |-=	     Subtract result from variable |
+	 |*=	     Multiply variable by result   |
+	 |/=	     Divide variable by result	   |
+	 |%=	     Apply modulo to variable	   |
+	 +-----------------------------------------+
+
+
+      +---------------------------------------+
+	  |		AWK Table 3		                  |
+	  |	    Relational Operators	          |
+	  |Operator   Meaning			          |
+	  +---------------------------------------+
+	  |==	      Is equal			          |
+	  |!=	      Is not equal to		      |
+	  |>	      Is greater than		      |
+	  |>=      Is greater than or equal to    |
+	  |<	      Is less than		          |
+	  |<=      Is less than or equal to	      |
+	  +---------------------------------------+
+
+
+           +-----------------------------+
+	       |	AWK Table 4	             |
+	       |Regular Expression Operators |
+	       |Operator     Meaning	     |
+	       +-----------------------------+
+	       |~	     Matches	         |
+	       |!~	     Doesn't match       |
+	       +-----------------------------+
