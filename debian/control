@@ -3,11 +3,14 @@ Section: admin
 Priority: optional
 Maintainer: Vladan Jovanovic <vladan44@gmail.com>
 Build-Depends: debhelper (>= 5)
-Standards-Version: 0.0.1
+Standards-Version: 0.0.3
 
 Package: vscripts
 Architecture: all
-Depends: python (>= 2.4), python (<< 3), perl, bash
+Depends: python (>= 2.4), python (<< 3), perl, bash, libjson-perl
 Conflicts:
 Replaces: 
 Description: Administration helper script
+ bash vscripts: bakrename, grepdijara, grp, mygitdiff, myvalgrind, remotegvim, simboli, spakujpromene, svnbc3, svndiff, svnst, range 
+ python vscripts: editdijara, grepy, grepymoje, recursivepie
+ perl   vscripts: googlaj lstr myperl awkc ggrep

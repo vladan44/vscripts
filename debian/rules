@@ -48,27 +48,35 @@ install: build
 
 	#
 	#
-	# mkdir -p $(CURDIR)/debian/vscripts/usr/local/bin
-	# cp -r $(CURDIR)/perl $(CURDIR)/debian/vscripts/usr/local/bin
-	cp -r $(CURDIR)/python $(CURDIR)/debian/vscripts/usr/local/bin
-	# cp -r $(CURDIR)/bash $(CURDIR)/debian/vscripts/usr/local/bin
-	# cp -r $(CURDIR)/bakrename $(CURDIR)/debian/vscripts/usr/local/bin
-	# cp -r $(CURDIR)/editdijara $(CURDIR)/debian/vscripts/usr/local/bin
-	# cp -r $(CURDIR)/googlaj $(CURDIR)/debian/vscripts/usr/local/bin
-	# cp -r $(CURDIR)/grepdijara $(CURDIR)/debian/vscripts/usr/local/bin
-	# cp -r $(CURDIR)/grepy $(CURDIR)/debian/vscripts/usr/local/bin
-	# cp -r $(CURDIR)/grepymoje $(CURDIR)/debian/vscripts/usr/local/bin
-	# cp -r $(CURDIR)/grp $(CURDIR)/debian/vscripts/usr/local/bin
-	# cp -r $(CURDIR)/mygitdiff $(CURDIR)/debian/vscripts/usr/local/bin
-	# cp -r $(CURDIR)/myvalgrind $(CURDIR)/debian/vscripts/usr/local/bin
-	# cp -r $(CURDIR)/recursivepie $(CURDIR)/debian/vscripts/usr/local/bin
-	# cp -r $(CURDIR)/remotegvim $(CURDIR)/debian/vscripts/usr/local/bin
-	# cp -r $(CURDIR)/simboli $(CURDIR)/debian/vscripts/usr/local/bin
-	# cp -r $(CURDIR)/spakujpromene $(CURDIR)/debian/vscripts/usr/local/bin
-	# cp -r $(CURDIR)/svnbc3 $(CURDIR)/debian/vscripts/usr/local/bin
-	# cp -r $(CURDIR)/svndiff $(CURDIR)/debian/vscripts/usr/local/bin
-	# cp -r $(CURDIR)/svnst $(CURDIR)/debian/vscripts/usr/local/bin
-	# cp -r $(CURDIR)/gitst $(CURDIR)/debian/vscripts/usr/local/bin
+	mkdir -p $(CURDIR)/debian/vscripts/usr/local/bin
+	cp -r $(CURDIR)/perl 			$(CURDIR)/debian/vscripts/usr/local/bin
+	cp -r $(CURDIR)/python 			$(CURDIR)/debian/vscripts/usr/local/bin
+	cp -r $(CURDIR)/bash 			$(CURDIR)/debian/vscripts/usr/local/bin
+	cp -r $(CURDIR)/bakrename 		$(CURDIR)/debian/vscripts/usr/local/bin
+	cp -r $(CURDIR)/editdijara 		$(CURDIR)/debian/vscripts/usr/local/bin
+	cp -r $(CURDIR)/ggrep   		$(CURDIR)/debian/vscripts/usr/local/bin
+	cp -r $(CURDIR)/googlaj 		$(CURDIR)/debian/vscripts/usr/local/bin
+	cp -r $(CURDIR)/grepdijara 		$(CURDIR)/debian/vscripts/usr/local/bin
+	cp -r $(CURDIR)/grepy 			$(CURDIR)/debian/vscripts/usr/local/bin
+	cp -r $(CURDIR)/grepymoje 		$(CURDIR)/debian/vscripts/usr/local/bin
+	cp -r $(CURDIR)/grp 			$(CURDIR)/debian/vscripts/usr/local/bin
+	cp -r $(CURDIR)/mygitdiff 		$(CURDIR)/debian/vscripts/usr/local/bin
+	cp -r $(CURDIR)/myvalgrind 		$(CURDIR)/debian/vscripts/usr/local/bin
+	cp -r $(CURDIR)/recursivepie 	$(CURDIR)/debian/vscripts/usr/local/bin
+	cp -r $(CURDIR)/remotegvim 		$(CURDIR)/debian/vscripts/usr/local/bin
+	cp -r $(CURDIR)/simboli 		$(CURDIR)/debian/vscripts/usr/local/bin
+	cp -r $(CURDIR)/spakujpromene 	$(CURDIR)/debian/vscripts/usr/local/bin
+	cp -r $(CURDIR)/svnbc3 			$(CURDIR)/debian/vscripts/usr/local/bin
+	cp -r $(CURDIR)/svndiff 		$(CURDIR)/debian/vscripts/usr/local/bin
+	cp -r $(CURDIR)/svnst 			$(CURDIR)/debian/vscripts/usr/local/bin
+	cp -r $(CURDIR)/gitst 			$(CURDIR)/debian/vscripts/usr/local/bin
+	cp -r $(CURDIR)/range 			$(CURDIR)/debian/vscripts/usr/local/bin
+	cp -r $(CURDIR)/lstr 			$(CURDIR)/debian/vscripts/usr/local/bin
+	cp -r $(CURDIR)/myhead 			$(CURDIR)/debian/vscripts/usr/local/bin
+	cp -r $(CURDIR)/awkc 			$(CURDIR)/debian/vscripts/usr/local/bin
+	cp -r $(CURDIR)/jsonparse 		$(CURDIR)/debian/vscripts/usr/local/bin
+	cp -r $(CURDIR)/isitrunning 	$(CURDIR)/debian/vscripts/usr/local/bin
+	cp -r $(CURDIR)/devetpet 		$(CURDIR)/debian/vscripts/usr/local/bin
 
 # Build architecture-independent files here.
 binary-indep: build install
