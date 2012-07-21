@@ -12,7 +12,7 @@
 #         BUGS:  ---
 #        NOTES:  ---
 #       AUTHOR:   (), <>
-#      COMPANY:  Nokia 
+#      COMPANY:
 #      VERSION:  1.0
 #      CREATED:  12/27/2006 9:47:35 AM Pacific Standard Time
 #     REVISION:  1.0
