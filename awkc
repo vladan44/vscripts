@@ -52,11 +52,13 @@ for my $i (0..$num) {
 
 while(<>) {
     chomp;
-    my @toks = split /$sep+/, $_;
-	for my $i (@rest) {
-        print "$toks[$i]\t" if $toks[$i]; 
+    if ($_ !~ /\b+/) {
+        my @toks = split /$sep+/, $_;
+        for my $i (@rest) {
+            print "$toks[$i]\t" if $toks[$i];
+        }
+        print "\n";
     }
-    print "\n";
 }
 
 __END__

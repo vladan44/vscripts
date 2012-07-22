@@ -34,6 +34,9 @@ my $filename = shift;
 die "First two arguments should be natural numbers."
 unless  $from =~ /^\d+$/ && $to =~ /^\d+$/;
 
+die "Arguments cannot be 0s."
+if $from == 0 || $to == 0;
+
 die "Third argument should be readable file."
 unless  -e $filename && -r $filename;
 
