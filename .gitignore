@@ -1,0 +1,7 @@
+build-stamp
+configure-stamp
+debian/files
+debian/vscripts.debhelper.log
+debian/vscripts.substvars
+debian/vscripts/
+*.swp
