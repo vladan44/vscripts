@@ -1,27 +1,6 @@
 ###############################################################################
 # SUSE spec file for package: vscripts
 #           
-#
-# add to README:
-#
-# build with command in rpmbuild directory: 
-#
-#       $ rpmbuild -v -ba SPECS/vscripts.spec  
-# 
-# rpmbuild directory has to have the following structure
-#
-# rpmbuild
-# |
-# ├── BUILD
-# ├── BUILDROOT
-# ├── RPMS
-# │   └── noarch
-# ├── SOURCES
-# │   └── vscripts-0.0.tar.gz
-# ├── SPECS
-# │   └── vscripts.spec
-# └── SRPMS
-#
 
 
 %define buildroot  /home/vladan/myrpm
