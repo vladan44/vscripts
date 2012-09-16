@@ -1,4 +1,27 @@
-build with :
-dpkg-buildpackage -uc -us
+- debian
+    build with :
+        dpkg-buildpackage -uc -us
 
-for skipping signing package.
+    for skipping signing package.
+
+
+- suse
+    build with command in rpmbuild directory: 
+    
+        rpmbuild -v -ba SPECS/vscripts.spec  
+    
+    rpmbuild directory has to have the following structure
+    
+    rpmbuild
+    |
+    ├── BUILD
+    ├── BUILDROOT
+    ├── RPMS
+    │   └── noarch
+    ├── SOURCES
+    │   └── vscripts-<version>.tar.gz
+    ├── SPECS
+    │   └── vscripts.spec
+    └── SRPMS
+    
+
