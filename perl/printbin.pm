@@ -15,14 +15,14 @@
 #     REVISION:  ---
 #===============================================================================
 
-# use strict;
-# use warnings;
+use strict;
+use warnings;
 
 sub printbin 
 {
     my $x = shift;
     print $x . "\n";
-    for ($i = 1 << 31; $i > 0; $i = $i >> 1) {
+    for (my $i = 1 << 31, ; $i > 0; $i = $i >> 1) {
         if ($i & $x) {
             print "1";
         } else {
@@ -33,6 +33,7 @@ sub printbin
 }
 
 # __main__
+
 
 die "usage : $0 <integer>" if $#ARGV;
 my $number = shift;
