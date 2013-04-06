@@ -1,13 +1,13 @@
 #!/usr/bin/python
 ###############################################################################
 # backup script
-# 
+#
 
 import os
-import time 
+import time
 import sys
 import getopt
-from socket import gethostname 
+from socket import gethostname
 
 
 osystem = sys.platform
@@ -23,23 +23,23 @@ if osystem[:3] == 'win':
             'C:\\vim\\vimfiles',
             'C:\\vim\\_vimrc',
             'C:\\vim\\_gvimrc',
-            'C:\\myutils', 
+            'C:\\myutils',
             'C:\\dijara',
             'C:\\workspace\gen',
             ]
 
     # backup E: drive workspace if it exist
-    if os.path.exists("E:\\"): source_dirs_files.append( 'E:\\workspace\\gen' )
+    if os.path.exists("E:\\"): source_dirs_files.append('E:\\workspace\\gen')
 
-    zip_command = '7z a %s %s' 
-    target_dir = 'C:\\backups\\' 
+    zip_command = '7z a %s %s'
+    target_dir = 'C:\\backups\\'
     extention = '.Z'
 
 else:
     source_dirs_files = [
             '~/.bashrc',
             '~/.mybashrc',
-            '~/scripts', 
+            '~/scripts',
             '~/.vimrc',
             '~/.gvimrc',
             '~/.vim',
@@ -50,23 +50,23 @@ else:
             '~/workspace/gen'
             ]
 
-    zip_command = 'tar czvf %s %s' 
-    target_dir = '/opt/backups/' 
+    zip_command = 'tar czvf %s %s'
+    target_dir = '/opt/backups/'
     extention = '.tar.gz'
 
 today = target_dir + time.strftime('%Y%m%d')
 hostname = gethostname()
 filename = hostname + '_' + time.strftime('%H%M%S')
-dirs = ' '.join( source_dirs_files ) 
+dirs = ' '.join(source_dirs_files)
 
 ###############################################################################
 # usage function
 #
 def usage():
-    sys.exit( "Usage: " + sys.argv[0] + """ [ options ] 
+    sys.exit("Usage: " + sys.argv[0] + """ [ options ]
 
         Cross-platform script for backing up important data. Depends on tar on
-        unix and on 7z on windows. 
+        unix and on 7z on windows.
 
         available options:
             -h --help               show this message
@@ -75,15 +75,15 @@ def usage():
         Backup file is:
         %s<date>%s<hostname_current_timestamp>[_comment].Z
 
-        List of files and directories to be backed up: 
-        %s 
-        """  % ( target_dir, os.sep, dirs ) )
+        List of files and directories to be backed up:
+        %s
+        """  % (target_dir, os.sep, dirs))
 
 ###############################################################################
 # add comment to backup filename
 # Take a comment from the user to create the name of the zip file
 #
-def add_comment(): 
+def add_comment():
     comment = raw_input('Enter a comment --> ')
     return today + os.sep + filename + '_' +\
             comment.replace(' ', '_') + extention
@@ -96,32 +96,32 @@ def main():
 
     # command lines option handlers:
     try:
-        opts, args = getopt.gnu_getopt( sys.argv[1:], 
-                "hc:", ["help", "comment"] )
+        opts, args = getopt.gnu_getopt(sys.argv[1:],
+                "hc:", ["help", "comment"])
 
     except getopt.GetoptError:
         usage()
 
     for opt, arg in opts:
-        if opt in ( "-h", "--help" ):
+        if opt in ("-h", "--help"):
             usage()
-        if opt in ( "-c", "--comment" ):
+        if opt in ("-c", "--comment"):
             keyword = arg
             target = add_comment()
 
     # create target path if it does not exist
-    if not os.path.exists( today ): os.makedirs( today, 0700 )
+    if not os.path.exists(today): os.makedirs(today, 0700)
 
 
     # absolut target filename
     if not 'target' in locals():
         target = today + os.sep + filename + extention
-    
+
     # assemble complete command
-    command = zip_command % ( target, dirs )
+    command = zip_command % (target, dirs)
 
     # actual backup
-    if os.system( command ) == 0: print 'Successful backup to', target
+    if os.system(command) == 0: print 'Successful backup to', target
     else: print 'Backup FAILED'
 
 
