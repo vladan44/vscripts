@@ -27,5 +27,5 @@ then
     mkdir /usr/local/share/backups/$b
 fi
 
-tar czvf --exclude "gnupoc" --exclude "workspace" /usr/local/share/backups/$b/home_dir.tar.gz /home/vladan
+tar czvf --exclude "gnupoc" --exclude "workspace" /usr/local/share/backups/$b/home_dir.tar.gz $HOME
 
