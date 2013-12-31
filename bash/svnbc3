@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Configure your favorite diff program here.
-DIFF="/home/vladan/bin/bcompare"
+DIFF="$HOME/bin/bcompare"
 
 # Subversion provides the paths we need as the sixth and seventh 
 # parameters.
