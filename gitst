@@ -1,4 +1,0 @@
-#!/bin/bash
-
-git status | egrep "both added:|new file:|modified:|deleted:"\
-           | awk 'BEGIN { FS = ":" } { print $2 }'
