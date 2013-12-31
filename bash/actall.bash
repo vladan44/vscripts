@@ -1,11 +1,10 @@
 #!/bin/bash
 # 
-# this is bash example for action on all files provided as cmd line arguments
-#
 
-for FN in $*
+arr=$*
+
+for FN in ${arr[@]}
 do
-    echo changing $FN...
+    echo $FN...
     # action
-    chmod 0750 $FN
 done
