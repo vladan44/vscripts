@@ -13,4 +13,4 @@ Replaces:
 Description: Administration helper script
  bash vscripts: bakrename, grepdijara, grp, mygitdiff, myvalgrind, remotegvim, simboli, spakujpromene, svnbc3, svndiff, svnst, range 
  python vscripts: editdijara, grepy, grepymoje, recursivepie
- perl   vscripts: googlaj lstr myperl awkc ggrep
+ perl   vscripts: googlaj lstr myperl awkc ggrep printbin

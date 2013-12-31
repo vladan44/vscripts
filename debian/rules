@@ -75,6 +75,9 @@ install: build
 	ln -s $(CURDIR)/debian/vscripts/usr/local/bin/perl/myhead.pl $(CURDIR)/debian/vscripts/usr/local/bin/myhead 
 	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/perl/myhead.pl
 
+	ln -s $(CURDIR)/debian/vscripts/usr/local/bin/perl/printbin.pm $(CURDIR)/debian/vscripts/usr/local/bin/printbin 
+	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/perl/printbin.pm
+
 	echo "python commands..."
 	ln -s $(CURDIR)/debian/vscripts/usr/local/bin/python/editdijara.py $(CURDIR)/debian/vscripts/usr/local/bin/editdijara 
 	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/python/editdijara.py
