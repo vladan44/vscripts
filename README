@@ -5,7 +5,8 @@
     for skipping signing package.
 
 
-- suse
+- suse/redhat/fedora/centos
+
     build with command in rpmbuild directory: 
     
         rpmbuild -v -ba SPECS/vscripts.spec  
@@ -23,21 +24,4 @@
     ├── SPECS
     │   └── vscripts.spec
     └── SRPMS
-    
-- redhat/fedora/centos
 
-    build with command in ~/rpmbuild directory: 
-    
-        rpmbuild -v -ba SPECS/vscripts.rh.spec  
-
-    rpmbuild
-    |
-    ├── BUILD
-    ├── BUILDROOT
-    ├── RPMS
-    │   └── noarch
-    ├── SOURCES
-    │   └── vscripts-<version>.tar.gz
-    ├── SPECS
-    │   └── vscripts.rh.spec
-    └── SRPMS
