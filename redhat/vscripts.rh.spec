@@ -24,6 +24,7 @@ Description: Administration helper scripts
                 myhead
                 jsonparse
                 printbin
+                filetime
 
  bash vscripts: bakrename 
                 grepdijara 
@@ -78,6 +79,9 @@ ln -sf perl/lstr.pl $RPM_BUILD_ROOT%_targetdir/lstr
 
 install -m 755 perl/myhead.pl $RPM_BUILD_ROOT%_targetdir/perl/myhead.pl
 ln -sf perl/myhead.pl $RPM_BUILD_ROOT%_targetdir/myhead
+
+install -m 755 perl/filetime.pl $RPM_BUILD_ROOT%_targetdir/perl/filetime.pl
+ln -sf perl/filetime.pl $RPM_BUILD_ROOT%_targetdir/filetime
 
 install -m 755 perl/printbin.pm $RPM_BUILD_ROOT%_targetdir/perl/printbin.pm
 ln -sf perl/printbin.pm $RPM_BUILD_ROOT%_targetdir/printbin
@@ -173,6 +177,8 @@ echo "post installation  nothing..."
 %_targetdir/jsonparse
 %_targetdir/perl/printbin.pm
 %_targetdir/printbin
+%_targetdir/perl/filetime.pl
+%_targetdir/filetime
 
 #bash
 %_targetdir/bash/bakrename.bash
