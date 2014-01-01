@@ -133,14 +133,14 @@ echo "python commands..."
 install -m 755 python/editdijara.py $RPM_BUILD_ROOT%_targetdir/python/editdijara.py
 ln -sf python/editdijara.py $RPM_BUILD_ROOT%_targetdir/editdijara 
 
-install -m 755 python/grepy.py $RPM_BUILD_ROOT%_targetdir/python/grepy.py
-ln -sf python/grepy.py $RPM_BUILD_ROOT%_targetdir/grepy 
+install -m 755 python/grepy $RPM_BUILD_ROOT%_targetdir/python/grepy
+ln -sf python/grepy $RPM_BUILD_ROOT%_targetdir/grepy 
 
-install -m 755 python/grepymoje.py $RPM_BUILD_ROOT%_targetdir/python/grepymoje.py
-ln -sf python/grepymoje.py $RPM_BUILD_ROOT%_targetdir/grepymoje 
+install -m 755 python/grepymoje $RPM_BUILD_ROOT%_targetdir/python/grepymoje
+ln -sf python/grepymoje $RPM_BUILD_ROOT%_targetdir/grepymoje 
 
-install -m 755 python/recursivepie.py $RPM_BUILD_ROOT%_targetdir/python/recursivepie.py
-ln -sf python/recursivepie.py $RPM_BUILD_ROOT%_targetdir/recursivepie 
+install -m 755 python/recursivepie $RPM_BUILD_ROOT%_targetdir/python/recursivepie
+ln -sf python/recursivepie $RPM_BUILD_ROOT%_targetdir/recursivepie 
 
 install -m 755 python/bcolors.py $RPM_BUILD_ROOT%_targetdir/python/bcolors.py
 install -m 755 python/debug.py $RPM_BUILD_ROOT%_targetdir/python/debug.py
@@ -167,7 +167,7 @@ echo "post installation  nothing..."
 %_targetdir/devetpet
 %_targetdir/perl/ggrep.pl
 %_targetdir/ggrep
-%_targetdir/perl/googlaj.pl
+%_targetdir/perl/googlaj
 %_targetdir/googlaj
 %_targetdir/perl/lstr.pl
 %_targetdir/lstr
