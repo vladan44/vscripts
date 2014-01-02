@@ -10,8 +10,6 @@
 #export DH_VERBOSE=1
 
 
-
-
 CFLAGS = -Wall -g
 
 ifneq (,$(findstring noopt,$(DEB_BUILD_OPTIONS)))
@@ -47,7 +45,6 @@ install: build
 	dh_installdirs
 
 	#
-	#
 	mkdir -p $(CURDIR)/debian/vscripts/usr/local/bin
 	cp -r $(CURDIR)/perl 			$(CURDIR)/debian/vscripts/usr/local/bin
 	cp -r $(CURDIR)/python 			$(CURDIR)/debian/vscripts/usr/local/bin
@@ -55,21 +52,13 @@ install: build
 
 	echo "perl commands..."
 	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/perl/awkc.pl
-
 	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/perl/devetpet.pl
-
 	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/perl/ggrep.pl
-
 	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/perl/googlaj.pl
-
 	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/perl/jsonparse.pl
-
 	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/perl/lstr.pl
-
 	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/perl/myhead.pl
-
 	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/perl/printbin.pl
-
 	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/perl/filetime.pl
 
 	echo "python commands..."
@@ -80,31 +69,18 @@ install: build
 
 	echo "bash commands..."
 	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/bash/bakrename.bash
-
 	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/bash/grepdijara
-
 	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/bash/grp
-
 	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/bash/mygitdiff.bash
-
 	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/bash/myvalgrind
-
 	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/bash/remotegvim
-
 	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/bash/simboli
-
 	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/bash/spakujpromene
-
 	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/bash/svnbc3
-
 	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/bash/svndiff
-
 	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/bash/svnst
-
 	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/bash/gitst
-
 	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/bash/range.bash
-
 	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/bash/isitrunning.bash
 
 # Build architecture-independent files here.
