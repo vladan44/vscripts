@@ -18,8 +18,8 @@
 #     REVISION:  ---
 #===========================================================================
 
-use strict;
-use warnings;
+# use strict;
+# use warnings;
 
 # import module
 use Getopt::Long;
@@ -52,7 +52,7 @@ for my $i (0..$num) {
 
 while(<>) {
     chomp;
-    if ($_ !~ /\b+/) {
+    unless ($_ =~ /^\s*$/) {
         my @toks = split /$sep+/, $_;
         for my $i (@rest) {
             print "$toks[$i]\t" if $toks[$i];
