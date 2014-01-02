@@ -7,16 +7,7 @@
 # This special exception was added by Craig Small in version 0.37 of dh-make.
 
 # Uncomment this to turn on verbose mode.
-#export DH_VERBOSE=1
-
-
-CFLAGS = -Wall -g
-
-ifneq (,$(findstring noopt,$(DEB_BUILD_OPTIONS)))
-	CFLAGS += -O0
-else
-	CFLAGS += -O2
-endif
+export DH_VERBOSE=1
 
 configure: configure-stamp
 configure-stamp:
@@ -24,7 +15,6 @@ configure-stamp:
 	# Add here commands to configure the package.
 
 	touch configure-stamp
-
 
 build: build-stamp
 
@@ -79,7 +69,7 @@ binary-arch: build install
 #	dh_installemacsen
 #	dh_installpam
 #	dh_installmime
-#	dh_python
+	dh_python2
 #	dh_installinit
 #	dh_installcron
 #	dh_installinfo
@@ -88,8 +78,8 @@ binary-arch: build install
 	dh_strip
 	dh_compress
 	dh_fixperms
-#	dh_perl
-#	dh_makeshlibs
+	dh_perl
+	dh_makeshlibs
 	dh_installdeb
 	dh_shlibdeps
 	dh_gencontrol
