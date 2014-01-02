@@ -69,17 +69,17 @@ install: build
 
 	echo "bash commands..."
 	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/bash/bakrename.bash
-	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/bash/grepdijara
-	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/bash/grp
+	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/bash/grepdijara.bash
+	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/bash/grp.bash
 	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/bash/mygitdiff.bash
-	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/bash/myvalgrind
-	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/bash/remotegvim
-	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/bash/simboli
-	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/bash/spakujpromene
-	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/bash/svnbc3
-	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/bash/svndiff
-	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/bash/svnst
-	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/bash/gitst
+	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/bash/myvalgrind.bash
+	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/bash/remotegvim.bash
+	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/bash/simboli.bash
+	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/bash/spakujpromene.bash
+	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/bash/svnbc3.bash
+	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/bash/svndiff.bash
+	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/bash/svnst.bash
+	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/bash/gitst.bash
 	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/bash/range.bash
 	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/bash/isitrunning.bash
 
