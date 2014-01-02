@@ -42,7 +42,7 @@ install: build
 
 	files=" perl/awkc.pl perl/devetpet.pl perl/googlaj.pl perl/jsonparse.pl \
             perl/lstr.pl perl/myhead.pl perl/printbin.pl perl/filetime.pl \
-            python/editdijara.py python/grepy.py python/grepymoje.py \
+            python/editdijara.py python/grepy.py python/grepymoje.py python/dijara.py\
             python/recursivepie.py bash/bakrename.bash bash/grepdijara.bash \
             bash/grp.bash bash/mygitdiff.bash bash/myvalgrind.bash \
             bash/remotegvim.bash bash/simboli.bash bash/spakujpromene.bash \

@@ -45,6 +45,7 @@ Description: Administration helper scripts
                 editdijara 
                 grepy 
                 grepymoje 
+                dijara 
                 recursivepie
 
 %prep
@@ -106,6 +107,7 @@ echo "python commands..."
 pyfiles=(   editdijara \
             grepy \
             grepymoje \
+            dijara \
             recursivepie \
             )
 for f in ${pyfiles[@]}
@@ -206,6 +208,9 @@ echo "post installation  nothing..."
 
 %_targetdir/python/grepymoje.py
 %_targetdir/grepymoje
+
+%_targetdir/python/dijara.py
+%_targetdir/dijara
 
 %_targetdir/python/recursivepie.py
 %_targetdir/recursivepie
