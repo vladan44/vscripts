@@ -68,8 +68,8 @@ ln -sf perl/devetpet.pl $RPM_BUILD_ROOT%_targetdir/devetpet
 install -m 755 perl/ggrep.pl $RPM_BUILD_ROOT%_targetdir/perl/ggrep.pl
 ln -sf perl/ggrep.pl $RPM_BUILD_ROOT%_targetdir/ggrep
 
-install -m 755 perl/googlaj $RPM_BUILD_ROOT%_targetdir/perl/googlaj
-ln -sf perl/googlaj $RPM_BUILD_ROOT%_targetdir/googlaj
+install -m 755 perl/googlaj.pl $RPM_BUILD_ROOT%_targetdir/perl/googlaj.pl
+ln -sf perl/googlaj.pl $RPM_BUILD_ROOT%_targetdir/googlaj
 
 install -m 755 perl/jsonparse.pl $RPM_BUILD_ROOT%_targetdir/perl/jsonparse.pl
 ln -sf perl/jsonparse.pl $RPM_BUILD_ROOT%_targetdir/jsonparse
@@ -83,8 +83,8 @@ ln -sf perl/myhead.pl $RPM_BUILD_ROOT%_targetdir/myhead
 install -m 755 perl/filetime.pl $RPM_BUILD_ROOT%_targetdir/perl/filetime.pl
 ln -sf perl/filetime.pl $RPM_BUILD_ROOT%_targetdir/filetime
 
-install -m 755 perl/printbin.pm $RPM_BUILD_ROOT%_targetdir/perl/printbin.pm
-ln -sf perl/printbin.pm $RPM_BUILD_ROOT%_targetdir/printbin
+install -m 755 perl/printbin.pl $RPM_BUILD_ROOT%_targetdir/perl/printbin.pl
+ln -sf perl/printbin.pl $RPM_BUILD_ROOT%_targetdir/printbin
 
 echo "bash commands..."
 install -m 755 bash/bakrename.bash $RPM_BUILD_ROOT%_targetdir/bash/bakrename.bash
@@ -167,7 +167,7 @@ echo "post installation  nothing..."
 %_targetdir/devetpet
 %_targetdir/perl/ggrep.pl
 %_targetdir/ggrep
-%_targetdir/perl/googlaj
+%_targetdir/perl/googlaj.pl
 %_targetdir/googlaj
 %_targetdir/perl/lstr.pl
 %_targetdir/lstr
@@ -175,7 +175,7 @@ echo "post installation  nothing..."
 %_targetdir/myhead
 %_targetdir/perl/jsonparse.pl
 %_targetdir/jsonparse
-%_targetdir/perl/printbin.pm
+%_targetdir/perl/printbin.pl
 %_targetdir/printbin
 %_targetdir/perl/filetime.pl
 %_targetdir/filetime

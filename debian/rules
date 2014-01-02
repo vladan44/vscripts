@@ -63,8 +63,8 @@ install: build
 	ln -s $(CURDIR)/debian/vscripts/usr/local/bin/perl/ggrep.pl $(CURDIR)/debian/vscripts/usr/local/bin/ggrep 
 	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/perl/ggrep.pl
 
-	ln -s $(CURDIR)/debian/vscripts/usr/local/bin/perl/googlaj $(CURDIR)/debian/vscripts/usr/local/bin/googlaj 
-	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/perl/googlaj
+	ln -s $(CURDIR)/debian/vscripts/usr/local/bin/perl/googlaj.pl $(CURDIR)/debian/vscripts/usr/local/bin/googlaj
+	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/perl/googlaj.pl
 
 	ln -s $(CURDIR)/debian/vscripts/usr/local/bin/perl/jsonparse.pl $(CURDIR)/debian/vscripts/usr/local/bin/jsonparse 
 	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/perl/jsonparse.pl
@@ -75,8 +75,8 @@ install: build
 	ln -s $(CURDIR)/debian/vscripts/usr/local/bin/perl/myhead.pl $(CURDIR)/debian/vscripts/usr/local/bin/myhead 
 	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/perl/myhead.pl
 
-	ln -s $(CURDIR)/debian/vscripts/usr/local/bin/perl/printbin.pm $(CURDIR)/debian/vscripts/usr/local/bin/printbin 
-	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/perl/printbin.pm
+	ln -s $(CURDIR)/debian/vscripts/usr/local/bin/perl/printbin.pl $(CURDIR)/debian/vscripts/usr/local/bin/printbin 
+	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/perl/printbin.pl
 
 	ln -s $(CURDIR)/debian/vscripts/usr/local/bin/perl/filetime.pl $(CURDIR)/debian/vscripts/usr/local/bin/filetime 
 	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/perl/filetime.pl
