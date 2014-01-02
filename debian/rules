@@ -54,84 +54,57 @@ install: build
 	cp -r $(CURDIR)/bash 			$(CURDIR)/debian/vscripts/usr/local/bin
 
 	echo "perl commands..."
-	ln -s $(CURDIR)/debian/vscripts/usr/local/bin/perl/awkc.pl $(CURDIR)/debian/vscripts/usr/local/bin/awkc 
 	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/perl/awkc.pl
 
-	ln -s $(CURDIR)/debian/vscripts/usr/local/bin/perl/devetpet.pl $(CURDIR)/debian/vscripts/usr/local/bin/devetpet 
 	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/perl/devetpet.pl
 
-	ln -s $(CURDIR)/debian/vscripts/usr/local/bin/perl/ggrep.pl $(CURDIR)/debian/vscripts/usr/local/bin/ggrep 
 	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/perl/ggrep.pl
 
-	ln -s $(CURDIR)/debian/vscripts/usr/local/bin/perl/googlaj.pl $(CURDIR)/debian/vscripts/usr/local/bin/googlaj
 	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/perl/googlaj.pl
 
-	ln -s $(CURDIR)/debian/vscripts/usr/local/bin/perl/jsonparse.pl $(CURDIR)/debian/vscripts/usr/local/bin/jsonparse 
 	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/perl/jsonparse.pl
 
-	ln -s $(CURDIR)/debian/vscripts/usr/local/bin/perl/lstr.pl $(CURDIR)/debian/vscripts/usr/local/bin/lstr 
 	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/perl/lstr.pl
 
-	ln -s $(CURDIR)/debian/vscripts/usr/local/bin/perl/myhead.pl $(CURDIR)/debian/vscripts/usr/local/bin/myhead 
 	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/perl/myhead.pl
 
-	ln -s $(CURDIR)/debian/vscripts/usr/local/bin/perl/printbin.pl $(CURDIR)/debian/vscripts/usr/local/bin/printbin 
 	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/perl/printbin.pl
 
-	ln -s $(CURDIR)/debian/vscripts/usr/local/bin/perl/filetime.pl $(CURDIR)/debian/vscripts/usr/local/bin/filetime 
 	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/perl/filetime.pl
 
 	echo "python commands..."
-	ln -s $(CURDIR)/debian/vscripts/usr/local/bin/python/editdijara.py $(CURDIR)/debian/vscripts/usr/local/bin/editdijara 
 	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/python/editdijara.py
-	ln -s $(CURDIR)/debian/vscripts/usr/local/bin/python/grepy $(CURDIR)/debian/vscripts/usr/local/bin/grepy 
 	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/python/grepy 
-	ln -s $(CURDIR)/debian/vscripts/usr/local/bin/python/grepymoje $(CURDIR)/debian/vscripts/usr/local/bin/grepymoje 
 	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/python/grepymoje 
-	ln -s $(CURDIR)/debian/vscripts/usr/local/bin/python/recursivepie $(CURDIR)/debian/vscripts/usr/local/bin/recursivepie 
 	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/python/recursivepie 
 
 	echo "bash commands..."
-	ln -s $(CURDIR)/debian/vscripts/usr/local/bin/bash/bakrename.bash $(CURDIR)/debian/vscripts/usr/local/bin/bakrename 
 	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/bash/bakrename.bash
 
-	ln -s $(CURDIR)/debian/vscripts/usr/local/bin/bash/grepdijara $(CURDIR)/debian/vscripts/usr/local/bin/grepdijara 
 	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/bash/grepdijara
 
-	ln -s $(CURDIR)/debian/vscripts/usr/local/bin/bash/grp $(CURDIR)/debian/vscripts/usr/local/bin/grp 
 	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/bash/grp
 
-	ln -s $(CURDIR)/debian/vscripts/usr/local/bin/bash/mygitdiff.bash $(CURDIR)/debian/vscripts/usr/local/bin/mygitdiff 
 	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/bash/mygitdiff.bash
 
-	ln -s $(CURDIR)/debian/vscripts/usr/local/bin/bash/myvalgrind $(CURDIR)/debian/vscripts/usr/local/bin/myvalgrind 
 	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/bash/myvalgrind
 
-	ln -s $(CURDIR)/debian/vscripts/usr/local/bin/bash/remotegvim $(CURDIR)/debian/vscripts/usr/local/bin/remotegvim 
 	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/bash/remotegvim
 
-	ln -s $(CURDIR)/debian/vscripts/usr/local/bin/bash/simboli $(CURDIR)/debian/vscripts/usr/local/bin/simboli 
 	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/bash/simboli
 
-	ln -s $(CURDIR)/debian/vscripts/usr/local/bin/bash/spakujpromene $(CURDIR)/debian/vscripts/usr/local/bin/spakujpromene 
 	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/bash/spakujpromene
 
-	ln -s $(CURDIR)/debian/vscripts/usr/local/bin/bash/svnbc3 $(CURDIR)/debian/vscripts/usr/local/bin/svnbc3 
 	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/bash/svnbc3
 
-	ln -s $(CURDIR)/debian/vscripts/usr/local/bin/bash/svndiff $(CURDIR)/debian/vscripts/usr/local/bin/svndiff 
 	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/bash/svndiff
 
-	ln -s $(CURDIR)/debian/vscripts/usr/local/bin/bash/svnst $(CURDIR)/debian/vscripts/usr/local/bin/svnst 
 	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/bash/svnst
 
-	ln -s $(CURDIR)/debian/vscripts/usr/local/bin/bash/gitst $(CURDIR)/debian/vscripts/usr/local/bin/gitst 
 	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/bash/gitst
 
-	ln -s $(CURDIR)/debian/vscripts/usr/local/bin/bash/range.bash $(CURDIR)/debian/vscripts/usr/local/bin/range 
 	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/bash/range.bash
 
-	ln -s $(CURDIR)/debian/vscripts/usr/local/bin/bash/isitrunning.bash $(CURDIR)/debian/vscripts/usr/local/bin/isitrunning 
 	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/bash/isitrunning.bash
 
 # Build architecture-independent files here.
