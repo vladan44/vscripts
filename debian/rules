@@ -63,9 +63,9 @@ install: build
 
 	echo "python commands..."
 	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/python/editdijara.py
-	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/python/grepy 
-	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/python/grepymoje 
-	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/python/recursivepie 
+	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/python/grepy.py
+	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/python/grepymoje.py
+	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/python/recursivepie.py 
 
 	echo "bash commands..."
 	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/bash/bakrename.bash

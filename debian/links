@@ -8,9 +8,9 @@
 /usr/local/bin/perl/printbin.pl /usr/local/bin/printbin 
 /usr/local/bin/perl/filetime.pl /usr/local/bin/filetime 
 /usr/local/bin/python/editdijara.py /usr/local/bin/editdijara 
-/usr/local/bin/python/grepy /usr/local/bin/grepy 
-/usr/local/bin/python/grepymoje /usr/local/bin/grepymoje 
-/usr/local/bin/python/recursivepie /usr/local/bin/recursivepie 
+/usr/local/bin/python/grepy.py /usr/local/bin/grepy 
+/usr/local/bin/python/grepymoje.py /usr/local/bin/grepymoje 
+/usr/local/bin/python/recursivepie.py /usr/local/bin/recursivepie 
 /usr/local/bin/bash/bakrename.bash /usr/local/bin/bakrename 
 /usr/local/bin/bash/grepdijara /usr/local/bin/grepdijara 
 /usr/local/bin/bash/grp /usr/local/bin/grp 

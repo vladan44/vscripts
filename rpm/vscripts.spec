@@ -110,21 +110,15 @@ do
 done
 
 echo "python commands..."
-pyfiles=(   grepy \
+pyfiles=(   editdijara \
+            grepy \
             grepymoje \
             recursivepie \
             )
 for f in ${pyfiles[@]}
 do
-    install -m 755 python/${f} $RPM_BUILD_ROOT%_targetdir/python/${f}
-    ln -sf python/${f} $RPM_BUILD_ROOT%_targetdir/$f
-done
-
-pfiles=(editdijara)
-for f in ${pfiles[@]}
-do
     install -m 755 python/${f}.py $RPM_BUILD_ROOT%_targetdir/python/${f}.py
-    ln -sf perl/${f}.py $RPM_BUILD_ROOT%_targetdir/$f
+    ln -sf python/${f}.py $RPM_BUILD_ROOT%_targetdir/$f
 done
 install -m 755 python/bcolors.py $RPM_BUILD_ROOT%_targetdir/python/bcolors.py
 install -m 755 python/debug.py $RPM_BUILD_ROOT%_targetdir/python/debug.py
