@@ -21,7 +21,7 @@ use warnings;
 sub printbin 
 {
     my $x = shift;
-    print $x . "\n";
+    # print $x . "\n";
     for (my $i = 1 << 31, ; $i > 0; $i = $i >> 1) {
         if ($i & $x) {
             print "1";
@@ -33,11 +33,9 @@ sub printbin
 }
 
 # __main__
-
-
-die "usage : $0 <integer>" if $#ARGV;
+die "usage: $0 <integer>" if $#ARGV;
 my $number = shift;
-
+my $max = ~0;
+die "Maximim 32 bit unsigned integer is: $max" if $number > $max;
 printbin($number); 
-
 
