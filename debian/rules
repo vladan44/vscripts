@@ -131,8 +131,8 @@ install: build
 	ln -s $(CURDIR)/debian/vscripts/usr/local/bin/bash/range.bash $(CURDIR)/debian/vscripts/usr/local/bin/range 
 	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/bash/range.bash
 
-	ln -s $(CURDIR)/debian/vscripts/usr/local/bin/bash/isitrunning.sh $(CURDIR)/debian/vscripts/usr/local/bin/isitrunning 
-	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/bash/isitrunning.sh
+	ln -s $(CURDIR)/debian/vscripts/usr/local/bin/bash/isitrunning.bash $(CURDIR)/debian/vscripts/usr/local/bin/isitrunning 
+	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/bash/isitrunning.bash
 
 # Build architecture-independent files here.
 binary-indep: build install

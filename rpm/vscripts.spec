@@ -52,11 +52,16 @@ Description: Administration helper scripts
 %build
 %install
 install -m 755 -d $RPM_BUILD_ROOT%_targetdir
-install -m 755 -d $RPM_BUILD_ROOT%_targetdir/python
-install -m 755 -d $RPM_BUILD_ROOT%_targetdir/perl
-install -m 755 -d $RPM_BUILD_ROOT%_targetdir/awk
-install -m 755 -d $RPM_BUILD_ROOT%_targetdir/bash
-install -m 755 -d $RPM_BUILD_ROOT%_targetdir/ruby
+dirs=(      python \
+            perl \
+            awk \
+            bash \
+            ruby \
+            )
+for f in ${dirs[@]}
+do
+    install -m 755 -d $RPM_BUILD_ROOT%_targetdir/$f
+done
 
 echo "perl commands..."
 plfiles=(   awkc \
@@ -96,15 +101,13 @@ done
 shfiles=(   bakrename \
             mygitdiff \
             range \
+            isitrunning \
             )
 for f in ${shfiles[@]}
 do
     install -m 755 bash/${f}.bash $RPM_BUILD_ROOT%_targetdir/bash/${f}.bash
     ln -sf perl/${f}.bash $RPM_BUILD_ROOT%_targetdir/$f
 done
-
-install -m 755 bash/isitrunning.sh $RPM_BUILD_ROOT%_targetdir/bash/isitrunning.sh
-ln -sf bash/isitrunning.sh $RPM_BUILD_ROOT%_targetdir/isitrunning
 
 echo "python commands..."
 pyfiles=(   grepy \
@@ -116,10 +119,15 @@ do
     install -m 755 python/${f} $RPM_BUILD_ROOT%_targetdir/python/${f}
     ln -sf python/${f} $RPM_BUILD_ROOT%_targetdir/$f
 done
+
+pfiles=(editdijara)
+for f in ${pfiles[@]}
+do
+    install -m 755 python/${f}.py $RPM_BUILD_ROOT%_targetdir/python/${f}.py
+    ln -sf perl/${f}.py $RPM_BUILD_ROOT%_targetdir/$f
+done
 install -m 755 python/bcolors.py $RPM_BUILD_ROOT%_targetdir/python/bcolors.py
 install -m 755 python/debug.py $RPM_BUILD_ROOT%_targetdir/python/debug.py
-install -m 755 python/editdijara.py $RPM_BUILD_ROOT%_targetdir/python/editdijara.py
-ln -sf python/editdijara.py $RPM_BUILD_ROOT%_targetdir/editdijara 
 
 
 %clean 
