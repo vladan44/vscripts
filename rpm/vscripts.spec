@@ -59,58 +59,58 @@ install -m 755 -d $RPM_BUILD_ROOT%_targetdir/bash
 install -m 755 -d $RPM_BUILD_ROOT%_targetdir/ruby
 
 echo "perl commands..."
-files=( awkc ggrep devetpet jsonparse lstr myhead googlaj filetime printbin )
-for f in "${files[@]}"
+plfiles=(   awkc \
+            ggrep \
+            devetpet \
+            jsonparse \
+            lstr \
+            myhead \
+            googlaj \
+            filetime \
+            printbin \
+            )
+for f in ${plfiles[@]}
 do
     install -m 755 perl/${f}.pl $RPM_BUILD_ROOT%_targetdir/perl/${f}.pl
     ln -sf perl/${f}.pl $RPM_BUILD_ROOT%_targetdir/$f
 done
 
 echo "bash commands..."
-install -m 755 bash/bakrename.bash $RPM_BUILD_ROOT%_targetdir/bash/bakrename.bash
-ln -sf bash/bakrename.bash $RPM_BUILD_ROOT%_targetdir/bakrename
+bashfiles=( grepdijara\
+            grp \
+            myvalgrind \
+            remotegvim \
+            simboli \
+            spakujpromene \
+            svnbc3 \
+            svndiff \
+            svnst \
+            gitst \
+            )
+for f in ${bashfiles[@]}
+do
+    install -m 755 bash/${f} $RPM_BUILD_ROOT%_targetdir/bash/${f}
+    ln -sf perl/${f} $RPM_BUILD_ROOT%_targetdir/$f
+done
 
-install -m 755 bash/grepdijara $RPM_BUILD_ROOT%_targetdir/bash/grepdijara
-ln -sf bash/grepdijara $RPM_BUILD_ROOT%_targetdir/grepdijara
-
-install -m 755 bash/grp $RPM_BUILD_ROOT%_targetdir/bash/grp
-ln -sf bash/grp $RPM_BUILD_ROOT%_targetdir/grp
-
-install -m 755 bash/mygitdiff.bash $RPM_BUILD_ROOT%_targetdir/bash/mygitdiff.bash
-ln -sf bash/mygitdiff.bash $RPM_BUILD_ROOT%_targetdir/mygitdiff
-
-install -m 755 bash/myvalgrind $RPM_BUILD_ROOT%_targetdir/bash/myvalgrind
-ln -sf bash/myvalgrind $RPM_BUILD_ROOT%_targetdir/myvalgrind
-
-install -m 755 bash/remotegvim $RPM_BUILD_ROOT%_targetdir/bash/remotegvim
-ln -sf bash/remotegvim $RPM_BUILD_ROOT%_targetdir/remotegvim
-
-install -m 755 bash/simboli $RPM_BUILD_ROOT%_targetdir/bash/simboli
-ln -sf bash/simboli $RPM_BUILD_ROOT%_targetdir/simboli
-
-install -m 755 bash/spakujpromene $RPM_BUILD_ROOT%_targetdir/bash/spakujpromene
-ln -sf bash/spakujpromene $RPM_BUILD_ROOT%_targetdir/spakujpromene
-
-install -m 755 bash/svnbc3 $RPM_BUILD_ROOT%_targetdir/bash/svnbc3
-ln -sf bash/svnbc3 $RPM_BUILD_ROOT%_targetdir/svnbc3
-
-install -m 755 bash/svndiff $RPM_BUILD_ROOT%_targetdir/bash/svndiff
-ln -sf bash/svndiff $RPM_BUILD_ROOT%_targetdir/svndiff
-
-install -m 755 bash/svnst $RPM_BUILD_ROOT%_targetdir/bash/svnst
-ln -sf bash/svnst $RPM_BUILD_ROOT%_targetdir/svnst
-
-install -m 755 bash/gitst $RPM_BUILD_ROOT%_targetdir/bash/gitst
-ln -sf bash/gitst $RPM_BUILD_ROOT%_targetdir/gitst
-
-install -m 755 bash/range.bash $RPM_BUILD_ROOT%_targetdir/bash/range.bash
-ln -sf bash/range.bash $RPM_BUILD_ROOT%_targetdir/range
+shfiles=(   bakrename \
+            mygitdiff \
+            range \
+            )
+for f in ${shfiles[@]}
+do
+    install -m 755 bash/${f}.bash $RPM_BUILD_ROOT%_targetdir/bash/${f}.bash
+    ln -sf perl/${f}.bash $RPM_BUILD_ROOT%_targetdir/$f
+done
 
 install -m 755 bash/isitrunning.sh $RPM_BUILD_ROOT%_targetdir/bash/isitrunning.sh
 ln -sf bash/isitrunning.sh $RPM_BUILD_ROOT%_targetdir/isitrunning
 
 echo "python commands..."
-pyfiles=( grepy grepymoje recursivepie )
+pyfiles=(   grepy \
+            grepymoje \
+            recursivepie \
+            )
 for f in ${pyfiles[@]}
 do
     install -m 755 python/${f} $RPM_BUILD_ROOT%_targetdir/python/${f}
