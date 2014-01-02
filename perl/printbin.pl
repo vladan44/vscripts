@@ -17,17 +17,13 @@
 
 use strict;
 use warnings;
+use Config qw( %Config );
 
 sub printbin 
 {
-    my $x = shift;
-    # print $x . "\n";
-    for (my $i = 1 << 31, ; $i > 0; $i = $i >> 1) {
-        if ($i & $x) {
-            print "1";
-        } else {
-            print "0";
-        }
+    my ($num, $size) = @_;
+    for (my $i = 1 << $size ; $i > 0; $i = $i >> 1) {
+        print $i & $num ? '1' : '0';
     }
     print "\n";
 }
@@ -36,6 +32,8 @@ sub printbin
 die "usage: $0 <integer>" if $#ARGV;
 my $number = shift;
 my $max = ~0;
-die "Maximim 32 bit unsigned integer is: $max" if $number > $max;
-printbin($number); 
+my $len = $Config{ivsize} * 8;
+die "Maximim $len bit unsigned integer is: $max" if $number > $max;
+
+printbin($number, $len - 1);
 
