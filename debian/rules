@@ -50,38 +50,16 @@ install: build
 	cp -r $(CURDIR)/python 			$(CURDIR)/debian/vscripts/usr/local/bin
 	cp -r $(CURDIR)/bash 			$(CURDIR)/debian/vscripts/usr/local/bin
 
-	echo "perl commands..."
-	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/perl/awkc.pl
-	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/perl/devetpet.pl
-	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/perl/ggrep.pl
-	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/perl/googlaj.pl
-	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/perl/jsonparse.pl
-	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/perl/lstr.pl
-	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/perl/myhead.pl
-	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/perl/printbin.pl
-	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/perl/filetime.pl
+	files=" perl/awkc.pl perl/devetpet.pl perl/googlaj.pl perl/jsonparse.pl \
+            perl/lstr.pl perl/myhead.pl perl/printbin.pl perl/filetime.pl \
+            python/editdijara.py python/grepy.py python/grepymoje.py \
+            python/recursivepie.py bash/bakrename.bash bash/grepdijara.bash \
+            bash/grp.bash bash/mygitdiff.bash bash/myvalgrind.bash \
+            bash/remotegvim.bash bash/simboli.bash bash/spakujpromene.bash \
+            bash/svnbc3.bash bash/svndiff.bash bash/svnst.bash bash/gitst.bash \
+            bash/range.bash bash/isitrunning.bash "
+	for f in $files; do chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/$f; done
 
-	echo "python commands..."
-	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/python/editdijara.py
-	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/python/grepy.py
-	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/python/grepymoje.py
-	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/python/recursivepie.py 
-
-	echo "bash commands..."
-	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/bash/bakrename.bash
-	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/bash/grepdijara.bash
-	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/bash/grp.bash
-	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/bash/mygitdiff.bash
-	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/bash/myvalgrind.bash
-	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/bash/remotegvim.bash
-	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/bash/simboli.bash
-	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/bash/spakujpromene.bash
-	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/bash/svnbc3.bash
-	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/bash/svndiff.bash
-	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/bash/svnst.bash
-	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/bash/gitst.bash
-	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/bash/range.bash
-	chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/bash/isitrunning.bash
 
 # Build architecture-independent files here.
 binary-indep: build install
