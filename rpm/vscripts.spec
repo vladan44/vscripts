@@ -91,22 +91,15 @@ bashfiles=( grepdijara\
             svndiff \
             svnst \
             gitst \
-            )
-for f in ${bashfiles[@]}
-do
-    install -m 755 bash/${f} $RPM_BUILD_ROOT%_targetdir/bash/${f}
-    ln -sf perl/${f} $RPM_BUILD_ROOT%_targetdir/$f
-done
-
-shfiles=(   bakrename \
+            bakrename \
             mygitdiff \
             range \
             isitrunning \
             )
-for f in ${shfiles[@]}
+for f in ${bashfiles[@]}
 do
     install -m 755 bash/${f}.bash $RPM_BUILD_ROOT%_targetdir/bash/${f}.bash
-    ln -sf perl/${f}.bash $RPM_BUILD_ROOT%_targetdir/$f
+    ln -sf bash/${f}.bash $RPM_BUILD_ROOT%_targetdir/$f
 done
 
 echo "python commands..."
@@ -162,43 +155,43 @@ echo "post installation  nothing..."
 %_targetdir/bash/bakrename.bash
 %_targetdir/bakrename
 
-%_targetdir/bash/grepdijara
+%_targetdir/bash/grepdijara.bash
 %_targetdir/grepdijara
 
-%_targetdir/bash/grp
+%_targetdir/bash/grp.bash
 %_targetdir/grp
 
 %_targetdir/bash/mygitdiff.bash
 %_targetdir/mygitdiff
 
-%_targetdir/bash/myvalgrind
+%_targetdir/bash/myvalgrind.bash
 %_targetdir/myvalgrind
 
-%_targetdir/bash/remotegvim
+%_targetdir/bash/remotegvim.bash
 %_targetdir/remotegvim
 
-%_targetdir/bash/simboli
+%_targetdir/bash/simboli.bash
 %_targetdir/simboli
 
-%_targetdir/bash/spakujpromene
+%_targetdir/bash/spakujpromene.bash
 %_targetdir/spakujpromene
 
-%_targetdir/bash/svnbc3
+%_targetdir/bash/svnbc3.bash
 %_targetdir/svnbc3
 
-%_targetdir/bash/svndiff
+%_targetdir/bash/svndiff.bash
 %_targetdir/svndiff
 
-%_targetdir/bash/svnst
+%_targetdir/bash/svnst.bash
 %_targetdir/svnst
 
 %_targetdir/bash/range.bash
 %_targetdir/range
 
-%_targetdir/bash/gitst
+%_targetdir/bash/gitst.bash
 %_targetdir/gitst
 
-%_targetdir/bash/isitrunning.sh
+%_targetdir/bash/isitrunning.bash
 %_targetdir/isitrunning
 
 # python
@@ -208,12 +201,12 @@ echo "post installation  nothing..."
 %_targetdir/python/editdijara.py
 %_targetdir/editdijara
 
-%_targetdir/python/grepy
+%_targetdir/python/grepy.py
 %_targetdir/grepy
 
-%_targetdir/python/grepymoje
+%_targetdir/python/grepymoje.py
 %_targetdir/grepymoje
 
-%_targetdir/python/recursivepie
+%_targetdir/python/recursivepie.py
 %_targetdir/recursivepie
 
