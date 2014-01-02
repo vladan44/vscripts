@@ -59,32 +59,12 @@ install -m 755 -d $RPM_BUILD_ROOT%_targetdir/bash
 install -m 755 -d $RPM_BUILD_ROOT%_targetdir/ruby
 
 echo "perl commands..."
-install -m 755 perl/awkc.pl $RPM_BUILD_ROOT%_targetdir/perl/awkc.pl
-ln -sf perl/awkc.pl $RPM_BUILD_ROOT%_targetdir/awkc
-
-install -m 755 perl/devetpet.pl $RPM_BUILD_ROOT%_targetdir/perl/devetpet.pl
-ln -sf perl/devetpet.pl $RPM_BUILD_ROOT%_targetdir/devetpet
-
-install -m 755 perl/ggrep.pl $RPM_BUILD_ROOT%_targetdir/perl/ggrep.pl
-ln -sf perl/ggrep.pl $RPM_BUILD_ROOT%_targetdir/ggrep
-
-install -m 755 perl/googlaj.pl $RPM_BUILD_ROOT%_targetdir/perl/googlaj.pl
-ln -sf perl/googlaj.pl $RPM_BUILD_ROOT%_targetdir/googlaj
-
-install -m 755 perl/jsonparse.pl $RPM_BUILD_ROOT%_targetdir/perl/jsonparse.pl
-ln -sf perl/jsonparse.pl $RPM_BUILD_ROOT%_targetdir/jsonparse
-
-install -m 755 perl/lstr.pl $RPM_BUILD_ROOT%_targetdir/perl/lstr.pl
-ln -sf perl/lstr.pl $RPM_BUILD_ROOT%_targetdir/lstr
-
-install -m 755 perl/myhead.pl $RPM_BUILD_ROOT%_targetdir/perl/myhead.pl
-ln -sf perl/myhead.pl $RPM_BUILD_ROOT%_targetdir/myhead
-
-install -m 755 perl/filetime.pl $RPM_BUILD_ROOT%_targetdir/perl/filetime.pl
-ln -sf perl/filetime.pl $RPM_BUILD_ROOT%_targetdir/filetime
-
-install -m 755 perl/printbin.pl $RPM_BUILD_ROOT%_targetdir/perl/printbin.pl
-ln -sf perl/printbin.pl $RPM_BUILD_ROOT%_targetdir/printbin
+files=( awkc ggrep devetpet jsonparse lstr myhead googlaj filetime printbin )
+for f in "${files[@]}"
+do
+    install -m 755 perl/${f}.pl $RPM_BUILD_ROOT%_targetdir/perl/${f}.pl
+    ln -sf perl/${f}.pl $RPM_BUILD_ROOT%_targetdir/$f
+done
 
 echo "bash commands..."
 install -m 755 bash/bakrename.bash $RPM_BUILD_ROOT%_targetdir/bash/bakrename.bash
@@ -130,20 +110,16 @@ install -m 755 bash/isitrunning.sh $RPM_BUILD_ROOT%_targetdir/bash/isitrunning.s
 ln -sf bash/isitrunning.sh $RPM_BUILD_ROOT%_targetdir/isitrunning
 
 echo "python commands..."
-install -m 755 python/editdijara.py $RPM_BUILD_ROOT%_targetdir/python/editdijara.py
-ln -sf python/editdijara.py $RPM_BUILD_ROOT%_targetdir/editdijara 
-
-install -m 755 python/grepy $RPM_BUILD_ROOT%_targetdir/python/grepy
-ln -sf python/grepy $RPM_BUILD_ROOT%_targetdir/grepy 
-
-install -m 755 python/grepymoje $RPM_BUILD_ROOT%_targetdir/python/grepymoje
-ln -sf python/grepymoje $RPM_BUILD_ROOT%_targetdir/grepymoje 
-
-install -m 755 python/recursivepie $RPM_BUILD_ROOT%_targetdir/python/recursivepie
-ln -sf python/recursivepie $RPM_BUILD_ROOT%_targetdir/recursivepie 
-
+pyfiles=( grepy grepymoje recursivepie )
+for f in ${pyfiles[@]}
+do
+    install -m 755 python/${f} $RPM_BUILD_ROOT%_targetdir/python/${f}
+    ln -sf python/${f} $RPM_BUILD_ROOT%_targetdir/$f
+done
 install -m 755 python/bcolors.py $RPM_BUILD_ROOT%_targetdir/python/bcolors.py
 install -m 755 python/debug.py $RPM_BUILD_ROOT%_targetdir/python/debug.py
+install -m 755 python/editdijara.py $RPM_BUILD_ROOT%_targetdir/python/editdijara.py
+ln -sf python/editdijara.py $RPM_BUILD_ROOT%_targetdir/editdijara 
 
 
 %clean 
