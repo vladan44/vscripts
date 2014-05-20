@@ -10,10 +10,12 @@ import getopt
 import platform
 
 
+gnuenv  = 'GNUPATH'
+gnupath = os.environ[gnuenv]
 
-sort = "C:\\gnu\\bin\\sort.exe"
-grep = "C:\\gnu\\bin\\grep.exe"
-ls   = "C:\\gnu\\bin\\ls.exe -l"
+sort = gnupath + "sort.exe"
+grep = gnupath + "grep.exe"
+ls   = gnupath + "ls.exe -l"
 recursive = False
 
 myname = sys.argv[0].split( os.sep )[-1]
