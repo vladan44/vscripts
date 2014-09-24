@@ -113,7 +113,7 @@ my $json;
 	local $/; # enable slurp
 	open my $fh, "<", $filename;
 	$json = <$fh>;
-    close $fh;
+	close $fh;
 }
 
 print "\n";
