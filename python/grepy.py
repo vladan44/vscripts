@@ -9,13 +9,15 @@ sys.dont_write_bytecode = True
 import bcolors
 
 # this should be really command line arguments...
-excludes = [ "svn", "swp" ]
+excludes = ["svn", "swp"]
 
 # globals
-myname = sys.argv[0].split( os.sep )[-1]
+myName = sys.argv[0].split(os.sep)[-1]
+
 
 def usage():
-    sys.exit( "usage: " + myname + " <string> <pattern> ")
+    sys.exit("usage: " + myName + " <string> <pattern> ")
+
 
 def print_help():
     sys.stdout.write(bcolors.bcolors.WARNING)
@@ -37,7 +39,7 @@ def print_help():
     sys.exit(0)
 
 
-def printExcludes():
+def print_excludes():
     print "-------------------------------------------------"
     print "excludes: ",
 
@@ -50,9 +52,12 @@ def printExcludes():
 def main():
 
     try:
-        opts, args = getopt.gnu_getopt( sys.argv[1:], 
-                "hipnx:", ["help", "ignorecase", "printexcludes", "lineno", "excludes"] )
-        
+        opts, args = getopt.gnu_getopt(sys.argv[1:],
+                "hipnx:", ["help", "ignorecase", "printexcludes", "lineno", "excludes"])
+
+        if not len(args) == 2:
+            usage()
+
     except getopt.GetoptError:
         usage()
 
@@ -61,39 +66,38 @@ def main():
     ignorecase = False
 
     for opt, arg in opts:
-        if opt in ( "-p", "--printexcludes" ):
+        if opt in ("-p", "--printexcludes"):
             printex = True
-        if opt in ( "-n", "--lineno" ):
+        if opt in ("-n", "--lineno"):
             lineno = True
-        if opt in ( "-h", "--help" ):
+        if opt in ("-h", "--help"):
             print_help()
-        if opt in ( "-i", "--ignorecase" ):
+        if opt in ("-i", "--ignorecase"):
             ignorecase = True
-        if opt in ( "-x", "--excludes" ):
+        if opt in ("-x", "--excludes"):
             lineno = True
-            excludes.append( arg )
+            excludes.append(arg)
 
-    if not len( args ) == 2: usage()
-
-    if ( printex ) : printExcludes()
+    if printex:
+        print_excludes()
 
     for dirname, dirnames, filenames in os.walk('.'):
         for filename in filenames:
             fullname = os.path.join(dirname, filename)
             
-            if ( re.search( args[1], fullname ) ) :
+            if re.search(args[1], fullname):
                 ex = False
                 for exclude in excludes: 
-                    if re.search( exclude, fullname ): 
+                    if re.search(exclude, fullname):
                         ex = True
                 if ex: continue
-                file = open( fullname, "r" )
+                fd = open(fullname, "r")
                 counter = 0
-                for line in file:
+                for line in fd:
                     counter += 1
                     if line[-1] == '\n': line = line[:-1]
-                    if ignorecase: research = re.search( args[0], line, re.I )
-                    else: research = re.search( args[0], line )
+                    if ignorecase: research = re.search(args[0], line, re.I)
+                    else: research = re.search(args[0], line)
                     if research:
                         if lineno:
                             sys.stdout.write(bcolors.bcolors.WARNING)
@@ -103,7 +107,7 @@ def main():
                             sys.stdout.write(bcolors.bcolors.WARNING)
                             print fullname + ": " + line
                             sys.stdout.write(bcolors.bcolors.ENDC)
-                file.close()
+                fd.close()
 
 if __name__ == "__main__":
     main()
