@@ -50,6 +50,7 @@ _RIGHT = 1
 _VALUE = 2
 _SORT_KEY = -1
 
+
 class BinarySearchTree(object):
     """
     A sorted collection of values that supports efficient insertion,
@@ -70,9 +71,9 @@ class BinarySearchTree(object):
         explicit sort key is not specified, then each value is
         considered its own sort key.
         """
-        self._root = [] # = empty node
+        self._root = []             # = empty node
         self._sort_key = sort_key
-        self._len = 0 # keep track of how many items we contain.
+        self._len = 0               # keep track of how many items we contain.
 
     #/////////////////////////////////////////////////////////////////
     # Public Methods
@@ -100,7 +101,7 @@ class BinarySearchTree(object):
         else:
             node[:] = [[], [], value, sort_key]
         self._len += 1
-        
+
     def minimum(self):
         """
         Return the value with the minimum sort key.  If multiple
@@ -264,7 +265,7 @@ class BinarySearchTree(object):
         stack = []
         node = self._root
         while stack or node:
-            if node: # descending the tree
+            if node:  # descending the tree
                 stack.append(node)
                 node = node[pre]
             else: # ascending the tree
@@ -277,31 +278,31 @@ class BinarySearchTree(object):
         Returns a (top_lines, mid_line, bot_lines) tuple,
         """
         if max_depth == 0:
-            return ([], '- ...', [])
+            return [], '- ...', []
         elif not node:
-            return ([], '- EMPTY', [])
+            return [], '- EMPTY', []
         else:
             top_lines = []
             bot_lines = []
             mid_line = '-%r' % node[_VALUE]
             if len(node) > 3: mid_line += ' (key=%r)' % node[_SORT_KEY]
             if node[_LEFT]:
-                t,m,b = self._pprint(node[_LEFT], max_depth-1,
-                                     show_key, spacer)
+                t, m, b = self._pprint(node[_LEFT], max_depth-1,
+                                       show_key, spacer)
                 indent = ' '*(len(b)+spacer)
                 top_lines += [indent+' '+line for line in t]
                 top_lines.append(indent+'/'+m)
                 top_lines += [' '*(len(b)-i+spacer-1)+'/'+' '*(i+1)+line
                               for (i, line) in enumerate(b)]
             if node[_RIGHT]:
-                t,m,b = self._pprint(node[_RIGHT], max_depth-1,
-                                     show_key, spacer)
+                t, m, b = self._pprint(node[_RIGHT], max_depth-1,
+                                       show_key, spacer)
                 indent = ' '*(len(t)+spacer)
                 bot_lines += [' '*(i+spacer)+'\\'+' '*(len(t)-i)+line
                               for (i, line) in enumerate(t)]
                 bot_lines.append(indent+'\\'+m)
                 bot_lines += [indent+' '+line for line in b]
-            return (top_lines, mid_line, bot_lines)
+            return top_lines, mid_line, bot_lines
 
 try:
     # Try to use the python recipe:

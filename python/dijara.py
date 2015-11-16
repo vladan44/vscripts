@@ -6,27 +6,27 @@ import datetime
 import platform
 
 if not len( sys.argv ) == 1: 
-    sys.exit( 'no arguments are accepted' )
+    sys.exit('no arguments are accepted')
 
 datum = datetime.date.today()
-iswin = platform.system() == 'Windows'
+is_win = platform.system() == 'Windows'
 
-if iswin:
-    dir = "C:\\dijara\\"
+if is_win:
+    dir_name = "C:\\dijara\\"
     clear = 'cls'
 else: 
-    dir = os.environ['HOME'] + "/dijara/"
+    dir_name = os.environ['HOME'] + "/dijara/"
     clear = 'clear'
 
-if not os.path.isdir(dir):
-	os.system ("mkdir " + dir)
+if not os.path.isdir(dir_name):
+    os.system("mkdir " + dir_name)
 
-file = "notes-" + datum.isoformat() + ".txt"
-command = "cat >> " + dir + file
+file_name = "notes-" + datum.isoformat() + ".txt"
+command = "cat >> " + dir_name + file_name
 
-if iswin:
+if is_win:
     os.system(clear)
-    print "win verson of dijara is closed with CTRL-Z"
+    print "win version of dijara is closed with CTRL-Z"
     print "=========================================="
 
 os.system(command)

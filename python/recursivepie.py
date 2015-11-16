@@ -13,7 +13,8 @@ import getopt
 import myregex
 
 usage = "usage: " + sys.argv[0] + " <fromstring> <tostring> <path>"
-perl  = "perl -pi.bak -e " 
+perl = "perl -pi.bak -e "
+
 
 def get_sed( arg1, arg2 ):
     return "\"s/" + arg1 + "/" + arg2 + "/g\" "
@@ -46,11 +47,16 @@ def print_help():
 
     sys.exit(0)
 
+
 # main
 def main():
 
     try:
-        opts, args = getopt.gnu_getopt( sys.argv[1:], "h", ["help"] )
+        opts, args = getopt.gnu_getopt(
+            sys.argv[1:],
+            "h",
+            ["help"]
+        )
 
     except getopt.GetoptError:
         print_usage()
@@ -61,25 +67,25 @@ def main():
     if len(sys.argv) != 4: 
         print_usage()
 
-    print "** This is silent killer, dont use it without care! ** "
+    print "** This is silent killer, don't use it without care! ** "
 
     for root, dirs, files in os.walk( sys.argv[3] ):
         for file in [f for f in files if myregex.is_cfile(f) or myregex.is_jsfile(f) ]:
-            changefile = False
-            apath =  os.path.abspath( root )
-            fullpath =  os.path.join( apath, file )
-            fd = open( fullpath )
+            change_file = False
+            apath = os.path.abspath(root)
+            fullpath =  os.path.join(apath, file)
+            fd = open(fullpath)
             for line in fd:
-                if re.search( sys.argv[1], line ):
-                    changefile = True
+                if re.search(sys.argv[1], line):
+                    change_file = True
 
             fd.close()
 
-            if( changefile == True ):
-                changefile = False
+            if change_file:
+                change_file = False
                 print fullpath
-                command = perl + get_sed( sys.argv[1], sys.argv[2] ) + fullpath
-                os.system( command ) 
+                command = perl + get_sed(sys.argv[1], sys.argv[2]) + fullpath
+                os.system(command)
 
 ###############################################################################
 # main

@@ -11,8 +11,10 @@ import bcolors
 # globals
 myname = sys.argv[0].split( os.sep )[-1]
 
+
 def usage():
     sys.exit( "usage: " + myname + " <filename> [OPTIONS]")
+
 
 def print_valid_json_warning(filename):
     sys.stdout.write(bcolors.bcolors.WARNING)
@@ -20,6 +22,7 @@ def print_valid_json_warning(filename):
     """ json object to be parsed\ncorrectly."""
     sys.stdout.write(bcolors.bcolors.ENDC)
     sys.exit(0)
+
 
 def print_help():
     sys.stdout.write(bcolors.bcolors.OKBLUE)
@@ -36,24 +39,32 @@ def print_help():
     sys.stdout.write(bcolors.bcolors.ENDC)
     sys.exit(0)
 
+
 def print_json(fj, lineno):
-    if lineno: j = 0 
+    j = 0
 
     for i in fj: 
         if lineno: 
             j += 1
             ln = "%2d." % j 
-        else: ln = ""
-        print ln + bcolors.bcolors.OKBLUE +\
-                "%20s :" % i + bcolors.bcolors.OKGREEN + " %s" % fj[i] 
+        else:
+            ln = ""
+        print ln + bcolors.bcolors.OKBLUE + '%20s :' % i + \
+            bcolors.bcolors.OKGREEN + " %s" % fj[i]
         sys.stdout.write(bcolors.bcolors.ENDC) 
 
 
 def main():
 
     try:
-        opts, args = getopt.gnu_getopt( sys.argv[1:], 
-                "hn", ["help", "lineno"] )
+        opts, args = getopt.gnu_getopt(
+            sys.argv[1:],
+            "hn",
+            [
+                "help",
+                "lineno"
+            ]
+        )
         
     except getopt.GetoptError:
         usage()
@@ -69,7 +80,8 @@ def main():
         if opt in ( "-i", "--ignorecase" ):
             ignorecase = True
 
-    if not len( args ) == 1: usage()
+    if not len(args) == 1:
+        usage()
 
     try: 
         fd = open(filename, 'r') 
@@ -85,8 +97,7 @@ def main():
     except:
         print_valid_json_warning(filename)
 
-    print bcolors.bcolors.OKBLUE +\
-            "======================================================"
+    print bcolors.bcolors.OKBLUE + "======================================================"
 
     print_json(fj, lineno)
 

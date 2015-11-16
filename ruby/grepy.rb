@@ -3,58 +3,92 @@ require 'optparse'
 require 'pp'
 
 $banner = "Usage " + $0 + " [options] " + <<eos
-
-    Zima je bila sa puno snega...
+    Ruby version of grepy.
 eos
 
+OPTIONS = { 
+    'ignore' => ['-i', '--ignorecase', 'Ignore case', :ignorecase],
+    'regex'  => ['-e', '--regex', 'Extended regular expressions', :eregex],
+    'exclude'  => ['-x p', '--excludes p', 'Excluded pattern', :exclude],
+    'dos' => ['-n f', '--filename f', 'Filename', :filename] 
+}
+
+$flags = {}
 
 # globbing
-def glob
-    Dir.foreach(".") do |entry|
-       puts entry if File.file? entry
+def regex_glob(string, pattern)
+    begin
+        Dir.foreach('.') do |entry|
+            next if /#{$flags[:exclude]}/.match(entry)
+
+            if /#{pattern}/.match(entry)
+                puts "Regex file #{entry}" if File.file? entry
+            end
+        end
+    rescue => e
+        puts e.to_s
     end
 end
 
+def glob(string, pattern)
+    Dir.glob(pattern) do |entry|
+        puts "File: #{entry}" if File.file? entry
+    end
+end
 
-# globbing
+def bail_out(msg)
+    puts msg
+    exit -1
+end
+
+# command line arguments
 def cline_arguments(argv)
     options = {}
     optparse = OptionParser.new do |opts|
         opts.banner = $banner
-        opts.on('-f o', '--flag o', 'Flag name') do |o|
-            options[:flag] = o
-        end
-        opts.on('-n f', '--filename f', 'Filename') do |f|
-            options[:filename] = f
+        OPTIONS.each do |k, v|
+            opts.on(v.shift, v.shift, v.shift) do |o|
+                options[v.shift] = o
+            end
         end
     end
-    if argv.empty?  
-        puts optparse 
-        exit -1 
-    end
+
     optparse.parse!
-    return options
+
+    bail_out optparse unless argv.size == 2
+
+    return options, argv
 end
 
 def process_options(opts)
     opts.each do |key, value|
-        puts "Option #{key} : " + "#{value}\n"
+        case key
+            when :exclude
+                $flags[:exclude] = value
+            when :filename
+                $flags[:filename] = value
+            when :ignorecase 
+                $flags[:ignoreflag] = true
+            when :eregex 
+                $flags[:eregex] = true
+            else 
+                bail_out "unknown option: #{key} #{value}"
+        end
     end
 end
 
 def main
-    opts = cline_arguments(ARGV)
+    opts, args = cline_arguments(ARGV)
     process_options(opts)
 
-    unless ARGV.empty?  
-        ARGV.each do|a|
-            puts "Argument: #{a}"
-        end
+    if $flags[:eregex]
+        regex_glob args.shift, args.shift
+    else
+        glob args.shift, args.shift
     end
-    glob
 end
 
 if __FILE__ == $0
-    main 
+    main
 end
 

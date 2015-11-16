@@ -6,20 +6,14 @@ $banner = "Usage " + $0 + " [options] " + <<eos
     Ruby version of grepy.
 eos
 
-OPTIONS = { 
+OPTIONS = {
     'uno' => ['-f o', '--flag o', 'Flag name', 'flag'],
-    'dos' => ['-n f', '--filename f', 'Filename', 'filename'] 
+    'dos' => ['-n f', '--filename f', 'Filename', 'filename']
 }
 
 
-def cat(filename)
-    Dir.foreach(".") do |entry|
-        display_file filename if File.file? entry and filename == entry
-    end
-end
-
 def display_file(filename)
-    File.open(filename, "r") do |f|
+    File.open(filename, 'r') do |f|
         f.readlines.each { |c| puts c }
     end
 end
@@ -41,15 +35,16 @@ def cline_arguments(argv)
         end
     end
 
+    optparse.parse!
+
     bail_out optparse unless argv.size == 1  
 
-    optparse.parse!
     return options, argv
 end
 
 def main
     opts, args = cline_arguments(ARGV)
-    cat args.shift
+    display_name args.shift
 end
 
 if __FILE__ == $0
