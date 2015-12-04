@@ -117,6 +117,7 @@ do
 done
 install -m 755 python/bcolors.py $RPM_BUILD_ROOT%_targetdir/python/bcolors.py
 install -m 755 python/debug.py $RPM_BUILD_ROOT%_targetdir/python/debug.py
+install -m 755 python/nfilename.py $RPM_BUILD_ROOT%_targetdir/nfilename/debug.py
 
 
 %clean 
@@ -199,6 +200,7 @@ echo "post installation  nothing..."
 # python
 %_targetdir/python/bcolors.py
 %_targetdir/python/debug.py
+%_targetdir/python/nfilename.py
 
 %_targetdir/python/editdijara.py
 %_targetdir/editdijara
