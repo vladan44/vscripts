@@ -6,43 +6,43 @@
 import os
 import sys
 import getopt 
-
 import platform
 
-
-gnuenv  = 'GNUPATH'
-gnupath = os.environ[gnuenv]
-
-sort = gnupath + "sort.exe"
-grep = gnupath + "grep.exe"
-ls   = gnupath + "ls.exe -l"
-recursive = False
-
+gnuenv = 'GNUPATH'
 myname = sys.argv[0].split( os.sep )[-1]
 
 
-def usage():
-    sys.exit( "usage: " + myname + " [-r|--recursive]")
+def usage(e):
+    if e:
+        print e
+    sys.exit("usage: " + myname + " [-r|--recursive]")
 
 
 def print_help():
     print """
     lssize
 
-    This file is only meant to run on Windows systems.
+    This script is only meant for Windows systems, since there is a simple
+    alternative in bash, nevertheless it runs on Unices as well.
     """
     sys.exit(0)
 
 
 def main():
 
-    global sort 
-    global grep
-    global ls 
     global recursive
+    global gnuenv
 
-    if platform.system() != 'Windows':
-        print_help()
+    if platform.system() == "Linux":
+        sort = "sort"
+        grep = "grep"
+        ls = "ls -l"
+    else:
+        gnupath = os.environ[gnuenv]
+        sort = gnupath + "sort.exe"
+        grep = gnupath + "grep.exe"
+        ls = gnupath + "ls.exe -l"
+    recursive = False
 
     try:
         opts, args = getopt.getopt(
@@ -50,21 +50,22 @@ def main():
             "rh",
             ["recursive", "help"]
         )
-    except:
-        usage()
 
-    for o, a in opts:
-        if o == '-r' or o == "--recursive":
-            recursive = True
-            print " recursive"
-        if o == '-h' or o == "--help":
-            usage()
+        for o, a in opts:
+            if o == '-r' or o == "--recursive":
+                recursive = True
+                print " recursive"
+            if o == '-h' or o == "--help":
+                usage(None)
 
-    if recursive:
-        ls += "R"
+        if recursive:
+            ls += "R"
 
-    cmd = ls + " | " + grep + " \"^-\" | " + sort + " -nr -k 5"
-    os.system( cmd )
+        cmd = ls + " | " + grep + " \"^-\" | " + sort + " -nr -k 5"
+        os.system(cmd)
+
+    except Exception as e:
+        usage(e)
 
 
 if __name__ == "__main__":
