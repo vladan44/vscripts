@@ -1,9 +1,11 @@
 #!/usr/bin/perl
 
+use strict;
+use warnings;
 use File::Find;
 
 ################################################################################
-$usage = "usage: text_files <string> \n";
+my $usage = "usage: text_files <string> \n";
 
 sub print_files { print "$_\n" if m/$ARGV[0]/ ; }
 

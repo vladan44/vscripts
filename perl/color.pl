@@ -33,7 +33,7 @@ print "This text is normal.\n";
 print colored ['yellow on_magenta'], "Yellow on magenta.\n"; 
 
 use Term::ANSIColor qw(uncolor);  
-print uncolor '01;31', "\n";     
+print uncolor, "";
 
 use Term::ANSIColor qw(:constants);
 print BOLD, BLUE, "This text is in bold blue.\n", RESET;
