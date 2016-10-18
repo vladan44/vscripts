@@ -1,8 +1,15 @@
 - debian
-    build with :
+
+build with :
         dpkg-buildpackage -uc -us
 
-    for skipping signing package.
+  for skipping signing package.
+
+install with: 
+        sudo dpkg --install DEB_PACKAGE
+
+uninstall with:
+        sudo dpkg --remove DEB_PACKAGE
 
 
 - suse/redhat/fedora/centos
@@ -11,6 +18,14 @@
     
         rpmbuild -v -ba SPECS/vscripts.spec  
     
+    install with: 
+
+        rpm -Uvh
+
+    uninstall with:
+    rpm -qa | grep -i vscripts
+    rpm -e <package name>
+
     rpmbuild directory has to have the following structure
     
     rpmbuild
@@ -24,4 +39,5 @@
     ├── SPECS
     │   └── vscripts.spec
     └── SRPMS
+
 
