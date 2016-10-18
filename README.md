@@ -1,6 +1,6 @@
 # VSCRIPTS
 
-## Debian
+## Debian / Ubuntu / Mint
 
 ### Build with:
 
@@ -22,9 +22,9 @@
 ```
 
 
-## Suse/RedHat/Fedora/CentOS
+## Suse / RedHat / Fedora / CentOS
 
-### Build with command in rpmbuild directory: 
+* Build with command in rpmbuild directory: 
     
 ```bash
  $ rpmbuild -v -ba SPECS/vscripts.spec  
