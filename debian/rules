@@ -47,7 +47,7 @@ install: build
             bash/grp.bash bash/mygitdiff.bash bash/myvalgrind.bash \
             bash/remotegvim.bash bash/simboli.bash bash/spakujpromene.bash \
             bash/svnbc3.bash bash/svndiff.bash bash/svnst.bash bash/gitst.bash \
-            bash/range.bash bash/isitrunning.bash "
+            bash/range.bash bash/isitrunning.bash bash/create_rpmbuild_dirs.bash "
 	for f in $files; do chmod 755 $(CURDIR)/debian/vscripts/usr/local/bin/$f; done
 
 
