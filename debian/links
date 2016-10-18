@@ -26,3 +26,4 @@
 /usr/local/bin/bash/gitst.bash /usr/local/bin/gitst 
 /usr/local/bin/bash/range.bash /usr/local/bin/range 
 /usr/local/bin/bash/isitrunning.bash /usr/local/bin/isitrunning 
+/usr/local/bin/bash/create_rpmbuild_dirs.bash /usr/local/bin/create_rpmbuild_dirs

@@ -39,7 +39,8 @@ Description: Administration helper scripts
                 svnst 
                 range 
                 gitst
-                isitrunning
+                isitrunning 
+                create_rpmbuild_dirs
 
  python vscripts: 
                 editdijara 
@@ -96,6 +97,7 @@ bashfiles=( grepdijara\
             mygitdiff \
             range \
             isitrunning \
+            create_rpmbuild_dirs
             )
 for f in ${bashfiles[@]}
 do
