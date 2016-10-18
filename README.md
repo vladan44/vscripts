@@ -13,12 +13,12 @@ $ dpkg-buildpackage -uc -us
 ### Install with: 
 
 ```bash
-# dpkg --install vscripts-<version>.deb
+$ sudo dpkg --install vscripts-<version>.deb
 ```
 
 ### Uninstall with: 
 ```bash
-# sudo dpkg --remove vscripts-version
+$ sudo dpkg --remove vscripts-version
 ```
 
 
@@ -33,13 +33,13 @@ $ dpkg-buildpackage -uc -us
 ### Install with: 
 
 ```bash
-# rpm -Uvh vscripts-<version>.rpm
+$ sudo rpm -Uvh vscripts-<version>.rpm
 ```
 
 ### Uninstall with:
 ```bash
-# rpm -qa | grep -i vscripts
-# rpm -e vscripts-<version>.noarch
+$ sudo rpm -qa | grep -i vscripts
+$ sudo rpm -e vscripts-<version>.noarch
 ```
 
 ### rpmbuild directory has to have the following structure
